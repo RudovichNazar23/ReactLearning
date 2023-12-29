@@ -5,10 +5,15 @@ import MenuItem from './components/MenuItem';
 import Counter from './components/ClickCounter';
 import Accrodion from './components/Accordion';
 import Calculator from './components/Calculator';
-import ToDoList from './components/ToDoList';
+import ToDoApplication from './components/ToDoList';
 
 function App() {
-  const taskList = ["Clean the room", "Go for a walk", "Cook a dinner"]
+  const taskList = [
+    {task: "1", done: false, index: 0},
+    {task: "2", done: false, index: 1},
+    {task: "3", done: false, index: 2},
+    {task: "4", done: false, index: 3},
+  ]
 
   return (
       <div className="m-3">
@@ -29,7 +34,7 @@ function App() {
           </Fragment>
           <hr />
           <Fragment>
-              <ToDoList initialList={taskList} />
+            <ToDoApplication initialList={taskList}/>
           </Fragment>
       </div>
   );

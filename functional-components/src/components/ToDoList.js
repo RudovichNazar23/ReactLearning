@@ -1,37 +1,50 @@
 import { Fragment, useState } from "react";
 
-function ToDoList({initialList}) {
-    const [todos, setToDos] = useState(initialList);
+function markAsDone(list, index){
+    return list.map(
+        (item, i) => i === index ? {...item, done: true} : item
+    );
+}
+
+function ToDoApplication ({initialList}) {
+    const [todos, setTodos] = useState(initialList);
+    const [hideDone, setHideDone] = useState(false);
+    const filteredTasks = hideDone ? todos.filter(({done}) => !done) : todos;
 
     return (
         <main>
+            <div style={{"display": "flex", "padding": "3px"}}>
+                <button onClick={() => setHideDone(false)}>
+                    Show all
+                </button>
+                <button onClick={() => setHideDone(true)}>
+                    Hide done
+                </button>
+            </div>
             {
-                todos.map(
-                    (task, index) => {
+                filteredTasks.map(
+                    (todo, index) => {
                         return (
-                            <div className="p-3 m-3" key={index}>
-                                <p>
-                                    {task}
-                                </p>
-                                <button onClick={() => {
-                                    setToDos(
-                                        (value) => {
-                                            return [
-                                                ...value.slice(0, index),
-                                                ...value.slice(index + 1)
-                                            ];
-                                        }
-                                    );
-                                }}>
-                                    x
-                                </button>
-                            </div>
+                            <p key={todo.task}>
+                                {
+                                    todo.done ? (
+                                        <strike>{todo.task}</strike>
+                                    ) : (
+                                        <>
+                                            {todo.task}
+                                            <button onClick={() => setTodos((value) => markAsDone(value, index))}>
+                                                x
+                                            </button>
+                                        </>
+                                    )
+                                }
+                            </p>
                         )
                     }
                 )
             }
         </main>
-    );  
+    )
 }
 
-export default ToDoList;
+export default ToDoApplication;

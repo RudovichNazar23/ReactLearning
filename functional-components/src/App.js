@@ -6,6 +6,7 @@ import Counter from './components/ClickCounter';
 import Accrodion from './components/Accordion';
 import Calculator from './components/Calculator';
 import ToDoApplication from './components/ToDoList';
+import RemoteDropDown from './components/RemoteDropDown';
 
 function App() {
   const taskList = [
@@ -35,6 +36,10 @@ function App() {
           <hr />
           <Fragment>
             <ToDoApplication initialList={taskList}/>
+          </Fragment>
+          <hr />
+          <Fragment>
+              <RemoteDropDown />
           </Fragment>
       </div>
   );

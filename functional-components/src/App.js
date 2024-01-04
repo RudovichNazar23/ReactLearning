@@ -7,6 +7,9 @@ import Accrodion from './components/Accordion';
 import Calculator from './components/Calculator';
 import ToDoApplication from './components/ToDoList';
 import RemoteDropDown from './components/RemoteDropDown';
+import Clicker from './components/Clicker';
+import StopWatch from './components/StopWatch';
+import ResizeWindow from './components/ResizeWindow';
 
 function App() {
   const taskList = [
@@ -18,7 +21,7 @@ function App() {
 
   return (
       <div className="m-3">
-          <Menu>
+          {/* <Menu>
               <MenuItem label="Home" name="Nazar"/>
               <MenuItem label="About" name="Steve"/>
               <MenuItem label="Blog" name="Bill"/>
@@ -40,7 +43,10 @@ function App() {
           <hr />
           <Fragment>
               <RemoteDropDown />
-          </Fragment>
+          </Fragment> */}
+          {/* <Clicker /> */}
+          {/* <StopWatch /> */}
+          <ResizeWindow />
       </div>
   );
 }

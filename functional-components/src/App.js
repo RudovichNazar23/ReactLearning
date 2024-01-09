@@ -10,6 +10,7 @@ import RemoteDropDown from './components/RemoteDropDown';
 import Clicker from './components/Clicker';
 import StopWatch from './components/StopWatch';
 import ResizeWindow from './components/ResizeWindow';
+import CountDown from './components/CountDown';
 
 function App() {
   const taskList = [
@@ -46,7 +47,8 @@ function App() {
           </Fragment> */}
           {/* <Clicker /> */}
           {/* <StopWatch /> */}
-          <ResizeWindow />
+          {/* <ResizeWindow /> */}
+          <CountDown />
       </div>
   );
 }

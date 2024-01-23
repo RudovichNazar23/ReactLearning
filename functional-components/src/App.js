@@ -11,6 +11,7 @@ import Clicker from './components/Clicker';
 import StopWatch from './components/StopWatch';
 import ResizeWindow from './components/ResizeWindow';
 import CountDown from './components/CountDown';
+import VideoPlayer from './components/VideoPlayer';
 
 function App() {
   const taskList = [
@@ -48,7 +49,8 @@ function App() {
           {/* <Clicker /> */}
           {/* <StopWatch /> */}
           {/* <ResizeWindow /> */}
-          <CountDown />
+          {/* <CountDown /> */}
+          <VideoPlayer />
       </div>
   );
 }

@@ -12,6 +12,7 @@ import StopWatch from './components/StopWatch';
 import ResizeWindow from './components/ResizeWindow';
 import CountDown from './components/CountDown';
 import VideoPlayer from './components/VideoPlayer';
+import DropDownCounter from './components/DropDownCounter';
 
 function App() {
   const taskList = [
@@ -50,7 +51,8 @@ function App() {
           {/* <StopWatch /> */}
           {/* <ResizeWindow /> */}
           {/* <CountDown /> */}
-          <VideoPlayer />
+          {/* <VideoPlayer /> */}
+          <DropDownCounter />
       </div>
   );
 }

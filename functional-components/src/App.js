@@ -13,6 +13,7 @@ import ResizeWindow from './components/ResizeWindow';
 import CountDown from './components/CountDown';
 import VideoPlayer from './components/VideoPlayer';
 import DropDownCounter from './components/DropDownCounter';
+import ContactForm from './components/ContactForm';
 
 function App() {
   const taskList = [
@@ -52,7 +53,8 @@ function App() {
           {/* <ResizeWindow /> */}
           {/* <CountDown /> */}
           {/* <VideoPlayer /> */}
-          <DropDownCounter />
+          {/* <DropDownCounter /> */}
+          <ContactForm />
       </div>
   );
 }

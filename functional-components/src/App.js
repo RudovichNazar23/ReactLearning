@@ -14,6 +14,10 @@ import CountDown from './components/CountDown';
 import VideoPlayer from './components/VideoPlayer';
 import DropDownCounter from './components/DropDownCounter';
 import ContactForm from './components/ContactForm';
+import LoginForm from './components/LoginForm';
+import Transition from './components/Transition';
+import ShowMenu from './components/ShowMenu';
+import SummationForm from './components/SummationForm';
 
 function App() {
   const taskList = [
@@ -54,7 +58,11 @@ function App() {
           {/* <CountDown /> */}
           {/* <VideoPlayer /> */}
           {/* <DropDownCounter /> */}
-          <ContactForm />
+          {/* <ContactForm /> */}
+          {/* <LoginForm /> */}
+          {/* <Transition /> */}
+          {/* <ShowMenu /> */}
+          <SummationForm />
       </div>
   );
 }

@@ -18,6 +18,8 @@ import LoginForm from './components/LoginForm';
 import Transition from './components/Transition';
 import ShowMenu from './components/ShowMenu';
 import SummationForm from './components/SummationForm';
+import HexColor from './components/HexColor';
+import AddressForm from './components/AddressForm';
 
 function App() {
   const taskList = [
@@ -62,7 +64,9 @@ function App() {
           {/* <LoginForm /> */}
           {/* <Transition /> */}
           {/* <ShowMenu /> */}
-          <SummationForm />
+          {/* <SummationForm /> */}
+          {/* <HexColor /> */}
+          <AddressForm />
       </div>
   );
 }

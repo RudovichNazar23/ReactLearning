@@ -1,73 +1,41 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
-import Menu from './components/Menu';
-import MenuItem from './components/MenuItem';
-import Counter from './components/ClickCounter';
-import Accrodion from './components/Accordion';
-import Calculator from './components/Calculator';
-import ToDoApplication from './components/ToDoList';
-import RemoteDropDown from './components/RemoteDropDown';
-import Clicker from './components/Clicker';
-import StopWatch from './components/StopWatch';
-import ResizeWindow from './components/ResizeWindow';
-import CountDown from './components/CountDown';
-import VideoPlayer from './components/VideoPlayer';
-import DropDownCounter from './components/DropDownCounter';
-import ContactForm from './components/ContactForm';
-import LoginForm from './components/LoginForm';
-import Transition from './components/Transition';
-import ShowMenu from './components/ShowMenu';
-import SummationForm from './components/SummationForm';
-import HexColor from './components/HexColor';
-import AddressForm from './components/AddressForm';
+import AddTaskForm from './components/AddTaskForm';
+import TaskList from './components/TaskList';
+
 
 function App() {
-  const taskList = [
-    {task: "1", done: false, index: 0},
-    {task: "2", done: false, index: 1},
-    {task: "3", done: false, index: 2},
-    {task: "4", done: false, index: 3},
-  ]
+  const [tasks, setTask] = useState([]);
+  const [showTasks, setShowTasks] = useState(true);
+
+  const addTaskHandler = (newTask) => {
+      setTask((oldItems) => oldItems.concat([newTask]));
+      setShowTasks(true);
+  };
+
+  const deleteTask = (event, taskTitle) => {
+    event.preventDefault();
+    setTask((oldTasks) => oldTasks.filter((task) => task.title !== taskTitle))
+  }
+
 
   return (
-      <div className="m-3">
-          {/* <Menu>
-              <MenuItem label="Home" name="Nazar"/>
-              <MenuItem label="About" name="Steve"/>
-              <MenuItem label="Blog" name="Bill"/>
-          </Menu>
-          <Fragment>
-            <Counter />
-          </Fragment>
-          <Fragment>
-                <Accrodion />
-          </Fragment>
-          <hr />
-          <Fragment>
-              <Calculator a={25} b={1}/>
-          </Fragment>
-          <hr />
-          <Fragment>
-            <ToDoApplication initialList={taskList}/>
-          </Fragment>
-          <hr />
-          <Fragment>
-              <RemoteDropDown />
-          </Fragment> */}
-          {/* <Clicker /> */}
-          {/* <StopWatch /> */}
-          {/* <ResizeWindow /> */}
-          {/* <CountDown /> */}
-          {/* <VideoPlayer /> */}
-          {/* <DropDownCounter /> */}
-          {/* <ContactForm /> */}
-          {/* <LoginForm /> */}
-          {/* <Transition /> */}
-          {/* <ShowMenu /> */}
-          {/* <SummationForm /> */}
-          {/* <HexColor /> */}
-          <AddressForm />
-      </div>
+    <div className="m-3 d-flex flex-column">
+        <div className='m-auto'>
+          <button className='btn btn-light border m-1' onClick={() => setShowTasks(true)}>
+            Show tasks
+          </button>
+          <button className='btn btn-success m-1' onClick={() => setShowTasks(false)}>
+            Add new task
+          </button>
+        </div>
+        <hr className='container' />
+        <div className='d-flex flex-column'>
+        {
+          showTasks ? <TaskList items={tasks} deleteHandler={deleteTask} /> : <AddTaskForm handler={addTaskHandler} />
+        }
+        </div>
+    </div>
   );
 }
 

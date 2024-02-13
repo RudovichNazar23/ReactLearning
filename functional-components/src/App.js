@@ -1,11 +1,14 @@
 import { Fragment, useState } from 'react';
 import './App.css';
-import NaturalSum from './components/UncontrolledInput';
-
+import DashBoard from './components/DashBoard';
 
 function App() {
+  const name = "Nazar"
+
   return (
-      <NaturalSum />
+      <div className="">
+          <DashBoard name={name}  />
+      </div>
   );
 }
 

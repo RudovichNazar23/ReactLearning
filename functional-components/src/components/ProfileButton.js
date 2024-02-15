@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { NameContext } from "../contexts/NameContext";
 
-function ProfileButton({ name }) {
+function ProfileButton() {
+    const name = useContext(NameContext);
+
     return (
         <a className="nav-link m-1">
             {name}

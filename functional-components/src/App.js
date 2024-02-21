@@ -1,12 +1,10 @@
 import './App.css';
-import AdminDashBoard from './components/AdminDashBoard';
+import UseReducerClicker from './components/UseReducerClicker';
 
 function App() {
-  const name = "Nazar"
-
   return (
       <div className="">
-          <AdminDashBoard />
+          <UseReducerClicker />
       </div>
   );
 }

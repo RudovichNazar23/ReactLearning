@@ -1,12 +1,12 @@
 import './App.css';
-import DashBoard from './components/DashBoard';
+import AdminDashBoard from './components/AdminDashBoard';
 
 function App() {
   const name = "Nazar"
 
   return (
       <div className="">
-          <DashBoard name={name}  />
+          <AdminDashBoard />
       </div>
   );
 }

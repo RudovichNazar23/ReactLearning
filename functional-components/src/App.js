@@ -1,10 +1,10 @@
 import './App.css';
-import UseReducerClicker from './components/UseReducerClicker';
+import DataLoader from './components/DataLoader';
 
 function App() {
   return (
       <div className="">
-          <UseReducerClicker />
+          <DataLoader />
       </div>
   );
 }
